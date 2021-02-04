@@ -4,6 +4,7 @@ import {
   Container, Typography, Box, Grid, TextField, IconButton, Button,
   FormGroup, FormControlLabel, Switch
 } from '@material-ui/core';
+import Tape from './Tape';
 
 const RedTextTypography = withStyles({
   root: {
@@ -16,18 +17,14 @@ class Log extends Component {
     render(){
         const tape = [...this.props.log.tape]
         const action = this.props.log.action
-        console.log(action)
-        console.log(tape)
 
         return (
-            <Fragment>
+            <Box my={2}>
                 <Typography variant="h5" align="center">
                     {action.action} {action.value}
                 </Typography>
-                <Typography variant="h5" align="center">
-                    {tape}
-                </Typography>
-            </Fragment>
+                <Tape tape={tape}/>
+            </Box>
         )
     }
 

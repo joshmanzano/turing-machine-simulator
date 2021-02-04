@@ -1,6 +1,6 @@
 {
-  "homepage": "https://joshmanzano.github.io/",
-  "name": "TWA-Simulator",
+  "homepage": "https://joshmanzano.github.io/turing-machine-simulator",
+  "name": "TM-Simulator",
   "author": "Joshua Manzano",
   "licence": "MIT",
   "version": "1.0.0",

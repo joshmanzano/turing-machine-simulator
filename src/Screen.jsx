@@ -10,6 +10,7 @@ import AddIcon from '@material-ui/icons/Add';
 import axios from 'axios';
 import Toast from 'light-toast';
 import Log from './Log';
+import Tape from './Tape';
 
 
 const RedTextTypography = withStyles({
@@ -219,8 +220,8 @@ class Screen extends Component {
     data['input'] = this.state.string
     console.log(data['states'])
     console.log(data['input'])
-    // Toast.loading('Simulating...')
-    axios.post('http://127.0.0.1:5000/tmsimulator', data)
+    Toast.loading('Simulating...')
+    axios.post('https://joshuamanzano.pythonanywhere.com/tmsimulator', data)
     .then(res => {
       console.log(res)
       this.setState({logs:res['data']['results']['logs']}, () => {
@@ -339,13 +340,16 @@ class Screen extends Component {
 
       <Box mt={4} mb={8}>
         <Typography variant="h4" align="center">
-          Result: {this.state.result}
+          Result:
         </Typography>
+        <Box mt={2}>
+          <Tape tape={this.state.result}/>
+        </Box>
       </Box>
       {this.state.logs.length > 0 &&
       <Box my={4}>
         <Typography variant="h4" align="center">
-          Logs
+          Logs:
         </Typography>
       </Box>
       }
